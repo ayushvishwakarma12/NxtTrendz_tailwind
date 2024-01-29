@@ -18,7 +18,7 @@ const ProductDetails: React.FC = (): JSX.Element => {
   const { id }: any = params;
 
   const dispatch = useAppDispatch();
-  const { productDetails, loading, error }: any = useAppSelector(
+  const { productDetails, loading }: any = useAppSelector(
     (state: RootState) => state.ProductDetailsSlice
   );
   const cartItems: any = useAppSelector((state: RootState) => state.CartSlice);

@@ -27,7 +27,7 @@ const FilterTab = () => {
     dispatch(getProductsThunk());
   };
 
-  const onClickSearchInput = (event) => {
+  const onClickSearchInput = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       dispatch(setSearchInput(searchInput));
       setSearchInputInUseState("");

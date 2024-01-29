@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { api } from "../api/Api";
 import Cookies from "js-cookie";
 import { sortbyOptions } from "../productConstants/ProductConstants";
+import { RootState } from "./Store";
 
 interface InitialState {
   activeOptionId: String;
@@ -28,7 +29,7 @@ export const getProductsThunk = createAsyncThunk(
   async (_, thunkApi) => {
     const jwtToken = Cookies.get("jwtToken");
     const { getState } = thunkApi;
-    const state = getState();
+    const state = getState() as RootState;
     const { productsSlice } = state;
     const { activeOptionId, activeCategoryId, searchInput, activeRatingId } =
       productsSlice;

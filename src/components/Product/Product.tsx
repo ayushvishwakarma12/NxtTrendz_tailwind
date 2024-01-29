@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   getProductsThunk,
   setActionOptionId,
@@ -40,7 +40,7 @@ const Products = () => {
     dispatch(getProductsThunk());
   }, []);
 
-  const onChangeSortBy = (event) => {
+  const onChangeSortBy = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOptionId(event.target.value);
     dispatch(setActionOptionId(event.target.value));
     dispatch(getProductsThunk());
